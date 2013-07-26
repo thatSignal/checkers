@@ -1,4 +1,5 @@
 require_relative "./player.rb"
+require_relative './board.rb'
 
 class Game
   def initialize
@@ -14,11 +15,18 @@ class Game
 
   def play
 
+    puts @board
+
+    while true
+      puts "#{@current_player}, make a move."
+      input = Player.make_move
+      @board.move!(input[0], input[1])
+      switch_turn
+      puts @board
+    end
+
   end
 
-  def translate_input
-
-  end
 
   def switch_turn
     (@current_player == :red) ? (@current_player = :white) : (@current_player = :red)

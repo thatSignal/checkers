@@ -55,12 +55,13 @@ class Board
   end
 
   def to_s
+    trans = [8, 7, 6, 5, 4, 3, 2, 1]
     puts "  --------------------------------"
     @rows.each_with_index do |row, i|
-      puts "#{i}| #{row.join(" | ")} |\n"
+      puts "#{trans[i]}| #{row.join(" | ")} |\n"
       puts "  --------------------------------"
     end
-    puts "   0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 -"
+    puts "   a - b - c - d - e - f - g - h -"
   end
 
   def set_pieces
@@ -91,30 +92,30 @@ class Board
 
 end # END BOARD
 #___________________________________________________________________________
-
-$b = Board.new
-#$b.set_pieces
-r1 = Piece.new($b, :red)
-r2 = Piece.new($b, :red)
-
-w1 = Piece.new($b, :white)
-w2 = Piece.new($b, :white)
-w3 = Piece.new($b, :white)
-
-$b[2, 1] = r1
-$b[3, 2] = w1
-$b[3, 0] = w2
-#$b[4, 3] = w3
-puts $b
-puts r1.kill_jumps.inspect
-puts r1.can_kill?
+#
+# $b = Board.new
+# #$b.set_pieces
+# r1 = Piece.new($b, :red)
+# r2 = Piece.new($b, :red)
+#
+# w1 = Piece.new($b, :white)
+# w2 = Piece.new($b, :white)
+# w3 = Piece.new($b, :white)
+#
+# $b[2, 1] = r1
+# $b[3, 2] = w1
+# $b[3, 0] = w2
+# #$b[4, 3] = w3
+# puts $b
+# puts r1.kill_jumps.inspect
+# puts r1.can_kill?
 #puts $b.all_pieces.inspect
 
 # $b[4,3] = w1
 # w1.position = [4,4]
 # $b[3,2] = NullPiece.new
 
-$b.move!([3,2], [4,3])
+# $b.move!([3,2], [4,3])
 
 
 
