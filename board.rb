@@ -115,7 +115,8 @@ puts r1.can_kill?
 # $b[3,2] = NullPiece.new
 
 $b.move!([3,2], [4,3])
-$b.move!([4,3], [5, 2])
+
+
 
 
 
